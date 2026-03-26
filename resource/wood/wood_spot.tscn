@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://utybaqfvwtw0"]
+
+[ext_resource type="Script" uid="uid://cqto6cirwuxde" path="res://resource/wood/wood_spot.gd" id="1_3frv1"]
+[ext_resource type="PackedScene" uid="uid://bx70cibwi1odq" path="res://resource/resource_spot.tscn" id="2_1ft4l"]
+[ext_resource type="Texture2D" uid="uid://bw81xltip6fdu" path="res://resource/wood/tree_1.png" id="3_1ft4l"]
+
+[node name="WoodSpot" unique_id=1218335561 instance=ExtResource("2_1ft4l")]
+script = ExtResource("1_3frv1")
+
+[node name="TreeSprite" type="Sprite2D" parent="." index="3" unique_id=551982488]
+position = Vector2(20, 20)
+texture = ExtResource("3_1ft4l")
+
+[connection signal="resource_harvested" from="." to="." method="_on_resource_harvested"]

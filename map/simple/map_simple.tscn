@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://d4giu7de1kntd"]
 
 [ext_resource type="Texture2D" uid="uid://dvvvr00yoxdfb" path="res://map/tileset/mapPack_tilesheet.png" id="1_cfk7f"]
+[ext_resource type="PackedScene" uid="uid://utybaqfvwtw0" path="res://resource/wood/wood_spot.tscn" id="2_3oteh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3oteh"]
 texture = ExtResource("1_cfk7f")
@@ -1349,8 +1350,33 @@ tile_map_data = PackedByteArray("AAAbAAIAAAAMAAMAAAAbAAEAAAANAAAAAAAbAAAAAAALAAA
 tile_set = SubResource("TileSet_q3smu")
 
 [node name="ObjectLayer" type="TileMapLayer" parent="." unique_id=1683038977]
-tile_map_data = PackedByteArray("AAAIAAUAAAADAAMAAAAJAAYAAAADAAMAAAAGAAMAAAAEAAMAAAALAA8AAAAEAAMAAAAYAAYAAAAJAAMAAAAaAAwAAAAJAAMAAAAgAAsAAAAJAAMAAAAeABEAAAAJAAIAAAAhABYAAAAJAAIAAAAiABYAAAAJAAIAAAAgAAYAAAAJAAMAAAAhAAMAAAAJAAMAAAAeAAEAAAAJAAMAAAAXAAMAAAAIAAMAAAAXAAQAAAAIAAMAAAAMAAIAAAAJAAcAAAANAAIAAAAJAAcAAAAOAAYAAAAJAAcAAAANAAgAAAAJAAcAAAAGAAAAAAAJAAcAAAAKAAAAAAAJAAcAAAADAA4AAAAJAAMAAAAFAA4AAAAJAAMAAAACAA0AAAAJAAMAAAACAAsAAAAJAAMAAAACAA4AAAAJAAMAAAAEAA4AAAAJAAMAAAACAAwAAAAJAAMAAAADAAwAAAAJAAIAAAADAA0AAAAJAAMAAAADAAsAAAAJAAMAAAAaABAAAAAIAAIAAAAbABAAAAAIAAIAAAAbABEAAAAIAAIAAAAaABEAAAAIAAIAAAAbABIAAAAIAAIAAAAcABEAAAAIAAIAAAAZAAEAAAAIAAIAAAAaAAEAAAAIAAIAAAAbAAEAAAAIAAIAAAAZAAAAAAAIAAIAAAAaAAAAAAAIAAIAAAAQAAoAAAAIAAIAAAARAAoAAAAIAAIAAAAEAA0AAAAJAAIAAAAFAAwAAAAJAAIAAAASAAcAAAAOAAYAAAANAAQAAAAOAAYAAAADAAAAAAAOAAYAAAAYAAsAAAAOAAYAAAATAAAAAAAOAAYAAAA=")
+tile_map_data = PackedByteArray("AAAIAAUAAAADAAMAAAAJAAYAAAADAAMAAAAGAAMAAAAEAAMAAAALAA8AAAAEAAMAAAAXAAMAAAAIAAMAAAAXAAQAAAAIAAMAAAAZAAEAAAAIAAIAAAAaAAEAAAAIAAIAAAAbAAEAAAAIAAIAAAAZAAAAAAAIAAIAAAAaAAAAAAAIAAIAAAAQAAoAAAAIAAIAAAARAAoAAAAIAAIAAAASAAcAAAAOAAYAAAANAAQAAAAOAAYAAAADAAAAAAAOAAYAAAAYAAsAAAAOAAYAAAATAAAAAAAOAAYAAAADAAoAAAANAAYAAAAGAAsAAAANAAYAAAACAA0AAAAOAAcAAAARAAgAAAAOAAcAAAAOAAcAAAAOAAcAAAAKAAEAAAAEAAIAAAANAAIAAAAEAAIAAAAOAAAAAAAEAAIAAAA=")
 tile_set = SubResource("TileSet_7blvk")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1248978198]
 navigation_polygon = SubResource("NavigationPolygon_cfk7f")
+
+[node name="WoodSports" type="Node" parent="." unique_id=1080282246]
+
+[node name="WoodSpot" parent="WoodSports" unique_id=2030838040 instance=ExtResource("2_3oteh")]
+position = Vector2(147, 769)
+current_amount = 150
+harvest_amount = 10
+
+[node name="WoodSpot2" parent="WoodSports" unique_id=1845184354 instance=ExtResource("2_3oteh")]
+position = Vector2(218, 769)
+
+[node name="WoodSpot3" parent="WoodSports" unique_id=1099231924 instance=ExtResource("2_3oteh")]
+position = Vector2(218, 889)
+
+[node name="WoodSpot4" parent="WoodSports" unique_id=1447842146 instance=ExtResource("2_3oteh")]
+position = Vector2(764, 91)
+
+[node name="WoodSpot5" parent="WoodSports" unique_id=66876929 instance=ExtResource("2_3oteh")]
+position = Vector2(816, 611)
+
+[node name="WoodSpot6" parent="WoodSports" unique_id=1726546069 instance=ExtResource("2_3oteh")]
+position = Vector2(1706, 1303)
+
+[node name="WoodSpot7" parent="WoodSports" unique_id=1674084604 instance=ExtResource("2_3oteh")]
+position = Vector2(2056, 845)

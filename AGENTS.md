@@ -89,9 +89,9 @@ var health: int = 100
 var speed: float = 10.5
 
 func heal(amount: int) -> void:
-    health += amount
-    health = min(health, max_health)
-    health_changed.emit(health)
+	health += amount
+	health = min(health, max_health)
+	health_changed.emit(health)
 
 # Bad
  var health:int=100  # no spaces, no type space
@@ -109,10 +109,10 @@ var speed: float = 10.0
 var name: String = "Player"
 
 func _ready() -> void:
-    pass
+	pass
 
 func move(direction: Vector2, delta: float) -> void:
-    position += direction * speed * delta
+	position += direction * speed * delta
 
 # Inference when type is obvious
 var items: Array[String] = []
@@ -134,7 +134,7 @@ health_changed.emit(health, new_health)
 health_changed.connect(_on_health_changed)
 
 func _on_health_changed(old_value: int, new_value: int) -> void:
-    print("Health changed from %d to %d" % [old_value, new_value])
+	print("Health changed from %d to %d" % [old_value, new_value])
 ```
 
 #### Exports
@@ -161,13 +161,13 @@ GDScript has **no try/catch**. Use guard clauses:
 
 ```gdscript
 func take_damage(amount: int) -> void:
-    if amount < 0:
-        push_warning("Negative damage amount")
-        return
-    
-    health -= amount
-    if health <= 0:
-        die()
+	if amount < 0:
+		push_warning("Negative damage amount")
+		return
+	
+	health -= amount
+	if health <= 0:
+		die()
 ```
 
 ### Scene Composition
