@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dimsyfxjhgf1h"]
+
+[ext_resource type="Script" uid="uid://b6dcshv8ugmgh" path="res://demo/movable/movable.gd" id="1_mpbkb"]
+
+[sub_resource type="Gradient" id="Gradient_expsx"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ypb3m"]
+gradient = SubResource("Gradient_expsx")
+
+[node name="Control" type="Control" unique_id=1952883789]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=341299075]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 154.0
+offset_bottom = 41.0
+text = "Press"
+
+[node name="Movable" type="Sprite2D" parent="." unique_id=1477906650]
+position = Vector2(84, 109)
+scale = Vector2(0.37692308, 61.25)
+texture = SubResource("GradientTexture1D_ypb3m")
+script = ExtResource("1_mpbkb")
+
+[connection signal="pressed" from="Button" to="Movable" method="_on_button_pressed"]

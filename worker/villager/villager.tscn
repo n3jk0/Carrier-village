@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://7nahqbmxnufu"]
+
+[ext_resource type="Script" uid="uid://c7amrw1471cd2" path="res://worker/villager/villager.gd" id="1_rylna"]
+[ext_resource type="Texture2D" uid="uid://dwpu7vb7er271" path="res://worker/villager/mapTile_137.png" id="2_4nyfk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rylna"]
+radius = 12.0
+height = 44.0
+
+[node name="Villager" type="CharacterBody2D" unique_id=742301583]
+script = ExtResource("1_rylna")
+
+[node name="VillagerSprite" type="Sprite2D" parent="." unique_id=1554654371]
+texture = ExtResource("2_4nyfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046671155]
+shape = SubResource("CapsuleShape2D_rylna")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=376819715]
+debug_enabled = true
+
+[node name="Label" type="Label" parent="." unique_id=1470136845]
+offset_left = -20.0
+offset_top = -52.0
+offset_right = 20.0
+offset_bottom = -29.0
+horizontal_alignment = 1
+
+[node name="StartMovingTimer" type="Timer" parent="." unique_id=5267454]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="StartMovingTimer" to="." method="_on_start_moving_timer_timeout"]
