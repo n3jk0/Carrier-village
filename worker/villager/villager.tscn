@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://dwpu7vb7er271" path="res://worker/villager/mapTile_137.png" id="2_4nyfk"]
 [ext_resource type="Script" uid="uid://dxwunbpbpcqnw" path="res://worker/villager/state_machine.gd" id="3_4nyfk"]
 [ext_resource type="Script" uid="uid://brc6ha08k0vti" path="res://common/state/idle_state.gd" id="4_2iemp"]
-[ext_resource type="Script" uid="uid://djwcty6jdhvvg" path="res://common/state/walking_to_spot_state.gd" id="5_1fiu5"]
+[ext_resource type="Script" uid="uid://cp8dg7du15ud1" path="res://common/state/dragging_state.gd" id="6_nucm0"]
+[ext_resource type="Script" uid="uid://da7kncubpcegy" path="res://common/state/walking_state.gd" id="6_xlb73"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rylna"]
 radius = 12.0
 height = 44.0
 
 [node name="Villager" type="CharacterBody2D" unique_id=742301583]
+input_pickable = true
 script = ExtResource("1_rylna")
 
 [node name="VillagerSprite" type="Sprite2D" parent="." unique_id=1554654371]
@@ -36,7 +38,14 @@ initial_state = NodePath("IdleState")
 
 [node name="IdleState" type="Node" parent="StateMachine" unique_id=493374330]
 script = ExtResource("4_2iemp")
+wait_time = 2.0
 
-[node name="WalkingToSpotState" type="Node" parent="StateMachine" unique_id=864395504]
-script = ExtResource("5_1fiu5")
-metadata/_custom_type_script = "uid://djwcty6jdhvvg"
+[node name="DraggingState" type="Node" parent="StateMachine" unique_id=250834167]
+script = ExtResource("6_nucm0")
+metadata/_custom_type_script = "uid://cp8dg7du15ud1"
+
+[node name="WalkingState" type="Node" parent="StateMachine" unique_id=1627709728]
+script = ExtResource("6_xlb73")
+metadata/_custom_type_script = "uid://da7kncubpcegy"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

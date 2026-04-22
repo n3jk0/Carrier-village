@@ -2,7 +2,7 @@ extends Node
 
 class_name StateMachine
 
-@export var character: CharacterBody2D
+@export var character: Villager
 @export var initial_state: State
 var current_state: State
 var states: Dictionary = {}

@@ -1,15 +1,25 @@
 [gd_scene format=3 uid="uid://ci0v7ww68hbyr"]
 
 [ext_resource type="PackedScene" uid="uid://d4giu7de1kntd" path="res://map/simple/map_simple.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://dk1d1usincj31" path="res://game.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://7nahqbmxnufu" path="res://worker/villager/villager.tscn" id="2_e2o6t"]
 
 [node name="Game" type="Node2D" unique_id=484213883]
+script = ExtResource("1_feb5d")
 
 [node name="MapSimple" parent="." unique_id=781160031 instance=ExtResource("1_80nbo")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=794638313]
 position = Vector2(1152, 543)
 zoom = Vector2(0.5, 0.5)
+limit_left = -47
+limit_top = -120
+limit_right = 2355
+limit_bottom = 1583
+position_smoothing_enabled = true
 
 [node name="Villager" parent="." unique_id=1243158422 instance=ExtResource("2_e2o6t")]
 position = Vector2(154, 12)
+
+[node name="Villager2" parent="." unique_id=742301583 instance=ExtResource("2_e2o6t")]
+position = Vector2(457, 237)
