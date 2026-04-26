@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://brc6ha08k0vti" path="res://common/state/idle_state.gd" id="4_2iemp"]
 [ext_resource type="Script" uid="uid://cp8dg7du15ud1" path="res://common/state/dragging_state.gd" id="6_nucm0"]
 [ext_resource type="Script" uid="uid://da7kncubpcegy" path="res://common/state/walking_state.gd" id="6_xlb73"]
+[ext_resource type="Script" uid="uid://cp4ki06t1ts02" path="res://common/state/working_state.gd" id="7_levrt"]
+[ext_resource type="Script" path="res://common/state/returning_to_base_state.gd" id="8_3hye3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rylna"]
 radius = 12.0
@@ -47,5 +49,13 @@ metadata/_custom_type_script = "uid://cp8dg7du15ud1"
 [node name="WalkingState" type="Node" parent="StateMachine" unique_id=1627709728]
 script = ExtResource("6_xlb73")
 metadata/_custom_type_script = "uid://da7kncubpcegy"
+
+[node name="WorkingState" type="Node" parent="StateMachine" unique_id=1537954346]
+script = ExtResource("7_levrt")
+metadata/_custom_type_script = "uid://cp4ki06t1ts02"
+
+[node name="ReturningToBaseState" type="Node" parent="StateMachine" unique_id=823051358]
+script = ExtResource("8_3hye3")
+metadata/_custom_type_script = "uid://csbraqbxg3mrf"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

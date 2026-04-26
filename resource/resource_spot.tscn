@@ -26,6 +26,5 @@ horizontal_alignment = 1
 wait_time = 300.0
 autostart = true
 
-[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="HarvestTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RestoreTimer" to="." method="_on_restore_timer_timeout"]

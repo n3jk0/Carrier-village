@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Villager
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@export var task: Global.TaskType = Global.TaskType.NONE
 const speed: int = 100
 const villagerNames: Array = ["Joe", "Ben", "Jacob", "Martin", "David"]
 var villagerName: String
@@ -27,7 +28,35 @@ func _input(event: InputEvent) -> void:
 				print("Dropped outside navigation region. Snapping to closest point.")
 				global_position = closest_point
 			
+			_check_for_resource_spot()
+			
 			print("Dropped ", villagerName)
+
+
+func _check_for_resource_spot() -> void:
+	var space_state: PhysicsDirectSpaceState2D = get_world_2d().direct_space_state
+	var query: PhysicsPointQueryParameters2D = PhysicsPointQueryParameters2D.new()
+	query.position = global_position
+	query.collide_with_areas = true
+	var results: Array[Dictionary] = space_state.intersect_point(query)
+	
+	target_spot = null
+	task = Global.TaskType.NONE
+	
+	for result in results:
+		var collider: Node = result.collider
+		if collider is ResourceSpot:
+			target_spot = collider
+			match target_spot.resource_type:
+				Global.ResourceType.FOOD:
+					task = Global.TaskType.GATHER_FOOD
+				Global.ResourceType.WOOD:
+					task = Global.TaskType.GATHER_WOOD
+				Global.ResourceType.STONE:
+					task = Global.TaskType.GATHER_STONE
+			
+			print("Villager ", villagerName, " assigned task: ", Global.TaskType.keys()[task], " at ", target_spot.name)
+			return
 
 
 func _process(_delta: float) -> void:
@@ -73,3 +102,4 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 func clear_target() -> void:
 	navigation_agent.target_position = global_position
 	target_spot = null
+	task = Global.TaskType.NONE

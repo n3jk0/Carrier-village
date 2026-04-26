@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://lofdcmgwb8ag"]
+
+[ext_resource type="Texture2D" uid="uid://ba1je1kahlj70" path="res://building/base/tile_0013.png" id="1_j0i0j"]
+[ext_resource type="Texture2D" uid="uid://cdn8bumbb4xj7" path="res://building/base/tile_0014.png" id="2_8g2n2"]
+[ext_resource type="Texture2D" uid="uid://dtqo52rjxwt4b" path="res://building/base/tile_0024.png" id="3_fmx51"]
+[ext_resource type="Texture2D" uid="uid://dgvvpl0ggun8j" path="res://building/base/tile_0026.png" id="4_1l10r"]
+[ext_resource type="Texture2D" uid="uid://b362da435wqod" path="res://building/base/tile_0038.png" id="5_xyk7r"]
+[ext_resource type="Texture2D" uid="uid://dt2b5dwinfnfd" path="res://building/base/tile_0037.png" id="6_qeqxu"]
+[ext_resource type="Texture2D" uid="uid://qr1mxy44io6a" path="res://building/base/tile_0036.png" id="7_7mjqf"]
+[ext_resource type="Texture2D" uid="uid://c2wxyd0bnwkn0" path="res://building/base/tile_0025.png" id="8_8lt6c"]
+[ext_resource type="Texture2D" uid="uid://ddduvo5hp5ors" path="res://building/base/tile_0012.png" id="9_11d08"]
+[ext_resource type="Texture2D" uid="uid://dni3m6tlhxvsf" path="res://building/base/tile_0044.png" id="10_nnhf0"]
+[ext_resource type="Texture2D" uid="uid://16oa6pp0il7w" path="res://building/base/tile_0045.png" id="11_txw50"]
+[ext_resource type="Texture2D" uid="uid://chdedet4a4kq6" path="res://building/base/tile_0046.png" id="12_vo2pg"]
+[ext_resource type="Texture2D" uid="uid://bpatrl6ujyem" path="res://building/base/tile_0056.png" id="13_pitgg"]
+[ext_resource type="Texture2D" uid="uid://dy6kk8f03b1px" path="res://building/base/tile_0058.png" id="14_kwlrk"]
+[ext_resource type="Texture2D" uid="uid://cs6p1dqfq0f8g" path="res://building/base/tile_0068.png" id="15_uoutb"]
+[ext_resource type="Texture2D" uid="uid://thu3rc33fgnw" path="res://building/base/tile_0069.png" id="16_12b2o"]
+[ext_resource type="Texture2D" uid="uid://b1mnsnn1xei2x" path="res://building/base/tile_0070.png" id="17_jjqsb"]
+[ext_resource type="Texture2D" uid="uid://caisj868ec5eq" path="res://building/base/tile_0081.png" id="18_rufj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnt2n"]
+size = Vector2(55, 24)
+
+[node name="Base" type="Area2D" unique_id=753709565]
+
+[node name="Tiles" type="Node2D" parent="." unique_id=948574659]
+
+[node name="Tile0013" type="Sprite2D" parent="Tiles" unique_id=1043206684]
+position = Vector2(24, 8)
+texture = ExtResource("1_j0i0j")
+
+[node name="Tile0014" type="Sprite2D" parent="Tiles" unique_id=1952447626]
+position = Vector2(40, 8)
+texture = ExtResource("1_j0i0j")
+
+[node name="Tile0015" type="Sprite2D" parent="Tiles" unique_id=995753195]
+position = Vector2(56, 8)
+texture = ExtResource("1_j0i0j")
+
+[node name="Tile0016" type="Sprite2D" parent="Tiles" unique_id=1117225522]
+position = Vector2(72, 8)
+texture = ExtResource("2_8g2n2")
+
+[node name="Tile0024" type="Sprite2D" parent="Tiles" unique_id=1060159229]
+position = Vector2(8, 24)
+texture = ExtResource("3_fmx51")
+
+[node name="Tile0026" type="Sprite2D" parent="Tiles" unique_id=1258813232]
+position = Vector2(72, 24)
+texture = ExtResource("4_1l10r")
+
+[node name="Tile0038" type="Sprite2D" parent="Tiles" unique_id=392724697]
+position = Vector2(72, 40)
+texture = ExtResource("5_xyk7r")
+
+[node name="Tile0037" type="Sprite2D" parent="Tiles" unique_id=158676867]
+position = Vector2(56, 40)
+texture = ExtResource("6_qeqxu")
+
+[node name="Tile0039" type="Sprite2D" parent="Tiles" unique_id=1020540069]
+position = Vector2(40, 40)
+texture = ExtResource("6_qeqxu")
+
+[node name="Tile0040" type="Sprite2D" parent="Tiles" unique_id=499987664]
+position = Vector2(24, 40)
+texture = ExtResource("6_qeqxu")
+
+[node name="Tile0036" type="Sprite2D" parent="Tiles" unique_id=1424261149]
+position = Vector2(8, 40)
+texture = ExtResource("7_7mjqf")
+
+[node name="Tile0025" type="Sprite2D" parent="Tiles" unique_id=1272149698]
+position = Vector2(24, 24)
+texture = ExtResource("8_8lt6c")
+
+[node name="Tile0027" type="Sprite2D" parent="Tiles" unique_id=324551436]
+position = Vector2(40, 24)
+texture = ExtResource("8_8lt6c")
+
+[node name="Tile0028" type="Sprite2D" parent="Tiles" unique_id=1444781880]
+position = Vector2(56, 24)
+texture = ExtResource("8_8lt6c")
+
+[node name="Tile0012" type="Sprite2D" parent="Tiles" unique_id=1434405264]
+position = Vector2(8, 8)
+texture = ExtResource("9_11d08")
+
+[node name="Tile0044" type="Sprite2D" parent="Tiles" unique_id=2012290826]
+position = Vector2(8, 8)
+texture = ExtResource("10_nnhf0")
+
+[node name="Tile0045" type="Sprite2D" parent="Tiles" unique_id=2021023066]
+position = Vector2(40, 8)
+texture = ExtResource("11_txw50")
+
+[node name="Tile0046" type="Sprite2D" parent="Tiles" unique_id=1190226134]
+position = Vector2(72, 8)
+texture = ExtResource("12_vo2pg")
+
+[node name="Tile0056" type="Sprite2D" parent="Tiles" unique_id=665693242]
+position = Vector2(8, 24)
+texture = ExtResource("13_pitgg")
+
+[node name="Tile0058" type="Sprite2D" parent="Tiles" unique_id=2122901357]
+position = Vector2(72, 24)
+texture = ExtResource("14_kwlrk")
+
+[node name="Tile0068" type="Sprite2D" parent="Tiles" unique_id=215817496]
+position = Vector2(8, 40)
+texture = ExtResource("15_uoutb")
+
+[node name="Tile0069" type="Sprite2D" parent="Tiles" unique_id=385369016]
+position = Vector2(40, 40)
+texture = ExtResource("16_12b2o")
+
+[node name="Tile0070" type="Sprite2D" parent="Tiles" unique_id=597475862]
+position = Vector2(72, 40)
+texture = ExtResource("17_jjqsb")
+
+[node name="Tile0081" type="Sprite2D" parent="Tiles" unique_id=171679860]
+position = Vector2(24, 8)
+texture = ExtResource("18_rufj7")
+
+[node name="Tile0082" type="Sprite2D" parent="Tiles" unique_id=400745644]
+position = Vector2(56, 8)
+texture = ExtResource("18_rufj7")
+
+[node name="Tile0083" type="Sprite2D" parent="Tiles" unique_id=880149170]
+position = Vector2(24, 40)
+texture = ExtResource("18_rufj7")
+
+[node name="Tile0084" type="Sprite2D" parent="Tiles" unique_id=376038281]
+position = Vector2(56, 40)
+texture = ExtResource("18_rufj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=965120974]
+position = Vector2(39.5, 24)
+shape = SubResource("RectangleShape2D_fnt2n")

@@ -1,8 +1,8 @@
 extends Node
 
 enum ResourceType { FOOD, WOOD, STONE }
-enum VillagerState { IDLE, DRAGGING, WALKING, WORKING }
-enum TaskType { NONE, GATHER_FOOD, CHOP_WOOD, BUILD }
+enum VillagerState { IDLE, DRAGGING, WALKING, WORKING, RETURNING_TO_BASE }
+enum TaskType { NONE, GATHER_FOOD, GATHER_WOOD, GATHER_STONE, BUILD, RETURNING_RESOURCE }
 
 
 func get_state_enum_name(value: int) -> String:

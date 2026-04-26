@@ -20,6 +20,10 @@ func update(_delta: float) -> void:
 		if villager.is_dragging:
 			state_machine.change_state(Global.VillagerState.DRAGGING)
 			return
+		
+		if villager.task != Global.TaskType.NONE:
+			state_machine.change_state(Global.VillagerState.WORKING)
+			return
 	
 func physics_update(delta: float) -> void:
 	if state_machine.character:
@@ -30,7 +34,7 @@ func physics_update(delta: float) -> void:
 		
 		timer += delta
 		if timer >= wait_time:
-			var random_point: Vector2 = Vector2(randf_range(0, 2000), randf_range(0, 2000))
+			var random_point: Vector2 = villager.global_position + Vector2(randf_range(-200, 200), randf_range(-200, 200))
 			villager.set_target(random_point)
 			state_machine.change_state(Global.VillagerState.WALKING)
 		

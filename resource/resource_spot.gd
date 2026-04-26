@@ -12,9 +12,11 @@ func _ready() -> void:
 	resetLabel()
 
 func start_harvest():
+	print("Starting harvest")
 	$HarvestTimer.start(harvest_time)
 
 func _on_timer_timeout():
+#	TODO: Have to somehow change villager state after harvest is complete
 	current_amount -= harvest_amount
 	resetLabel()
 	resource_harvested.emit(resource_type, harvest_amount)
@@ -26,8 +28,3 @@ func _on_restore_timer_timeout() -> void:
 
 func resetLabel():
 	$Label.text = str(current_amount)
-
-
-func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
-		print("Harvest!")

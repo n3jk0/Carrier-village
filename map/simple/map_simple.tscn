@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dvvvr00yoxdfb" path="res://map/tileset/mapPack_tilesheet.png" id="1_cfk7f"]
 [ext_resource type="PackedScene" uid="uid://utybaqfvwtw0" path="res://resource/wood/wood_spot.tscn" id="2_3oteh"]
 [ext_resource type="PackedScene" uid="uid://byimot06ct8g5" path="res://resource/food/food_spot.tscn" id="3_ubk3n"]
+[ext_resource type="PackedScene" uid="uid://lofdcmgwb8ag" path="res://building/base/base.tscn" id="4_7blvk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3oteh"]
 texture = ExtResource("1_cfk7f")
@@ -1357,35 +1358,35 @@ tile_set = SubResource("TileSet_7blvk")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1248978198]
 navigation_polygon = SubResource("NavigationPolygon_cfk7f")
 
-[node name="WoodSports" type="Node" parent="." unique_id=1080282246]
+[node name="WoodSpots" type="Node" parent="." unique_id=1080282246]
 
-[node name="WoodSpot" parent="WoodSports" unique_id=2030838040 instance=ExtResource("2_3oteh")]
+[node name="WoodSpot" parent="WoodSpots" unique_id=2030838040 instance=ExtResource("2_3oteh")]
 position = Vector2(147, 769)
 current_amount = 150
 harvest_amount = 10
 resource_type = 1
 
-[node name="WoodSpot2" parent="WoodSports" unique_id=1845184354 instance=ExtResource("2_3oteh")]
+[node name="WoodSpot2" parent="WoodSpots" unique_id=1845184354 instance=ExtResource("2_3oteh")]
 position = Vector2(218, 769)
 resource_type = 1
 
-[node name="WoodSpot3" parent="WoodSports" unique_id=1099231924 instance=ExtResource("2_3oteh")]
+[node name="WoodSpot3" parent="WoodSpots" unique_id=1099231924 instance=ExtResource("2_3oteh")]
 position = Vector2(217, 877)
 resource_type = 1
 
-[node name="WoodSpot4" parent="WoodSports" unique_id=1447842146 instance=ExtResource("2_3oteh")]
+[node name="WoodSpot4" parent="WoodSpots" unique_id=1447842146 instance=ExtResource("2_3oteh")]
 position = Vector2(764, 91)
 resource_type = 1
 
-[node name="WoodSpot5" parent="WoodSports" unique_id=66876929 instance=ExtResource("2_3oteh")]
+[node name="WoodSpot5" parent="WoodSpots" unique_id=66876929 instance=ExtResource("2_3oteh")]
 position = Vector2(816, 611)
 resource_type = 1
 
-[node name="WoodSpot6" parent="WoodSports" unique_id=1726546069 instance=ExtResource("2_3oteh")]
+[node name="WoodSpot6" parent="WoodSpots" unique_id=1726546069 instance=ExtResource("2_3oteh")]
 position = Vector2(1706, 1303)
 resource_type = 1
 
-[node name="WoodSpot7" parent="WoodSports" unique_id=1674084604 instance=ExtResource("2_3oteh")]
+[node name="WoodSpot7" parent="WoodSpots" unique_id=1674084604 instance=ExtResource("2_3oteh")]
 position = Vector2(2056, 845)
 resource_type = 1
 
@@ -1410,3 +1411,20 @@ position = Vector2(1520, 1243)
 
 [node name="FoodSpot6" parent="FoodSpots" unique_id=602441357 instance=ExtResource("3_ubk3n")]
 position = Vector2(1571, 261)
+
+[node name="Base" parent="." unique_id=753709565 instance=ExtResource("4_7blvk")]
+position = Vector2(427, 453)
+
+[connection signal="input_event" from="WoodSpots/WoodSpot" to="WoodSpots/WoodSpot" method="_on_input_event"]
+[connection signal="input_event" from="WoodSpots/WoodSpot2" to="WoodSpots/WoodSpot2" method="_on_input_event"]
+[connection signal="input_event" from="WoodSpots/WoodSpot3" to="WoodSpots/WoodSpot3" method="_on_input_event"]
+[connection signal="input_event" from="WoodSpots/WoodSpot4" to="WoodSpots/WoodSpot4" method="_on_input_event"]
+[connection signal="input_event" from="WoodSpots/WoodSpot5" to="WoodSpots/WoodSpot5" method="_on_input_event"]
+[connection signal="input_event" from="WoodSpots/WoodSpot6" to="WoodSpots/WoodSpot6" method="_on_input_event"]
+[connection signal="input_event" from="WoodSpots/WoodSpot7" to="WoodSpots/WoodSpot7" method="_on_input_event"]
+[connection signal="input_event" from="FoodSpots/FoodSpot" to="FoodSpots/FoodSpot" method="_on_input_event"]
+[connection signal="input_event" from="FoodSpots/FoodSpot2" to="FoodSpots/FoodSpot2" method="_on_input_event"]
+[connection signal="input_event" from="FoodSpots/FoodSpot3" to="FoodSpots/FoodSpot3" method="_on_input_event"]
+[connection signal="input_event" from="FoodSpots/FoodSpot4" to="FoodSpots/FoodSpot4" method="_on_input_event"]
+[connection signal="input_event" from="FoodSpots/FoodSpot5" to="FoodSpots/FoodSpot5" method="_on_input_event"]
+[connection signal="input_event" from="FoodSpots/FoodSpot6" to="FoodSpots/FoodSpot6" method="_on_input_event"]
