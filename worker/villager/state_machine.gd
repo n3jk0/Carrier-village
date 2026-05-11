@@ -9,7 +9,7 @@ var states: Dictionary = {}
 
 func _ready() -> void:
 	if not character:
-		print("Vharacter not set. Use parent node instead.")
+		Log.info("Vharacter not set. Use parent node instead.")
 		character = get_parent()
 		
 	for child in get_children():
@@ -23,6 +23,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if current_state:
 		current_state.update(delta)
+		character.set_status_label(Global.get_state_enum_name(current_state.get_state_enum()))
 
 func _physics_process(delta: float) -> void:
 	if current_state:

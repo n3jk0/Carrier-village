@@ -7,13 +7,15 @@
 [ext_resource type="Script" uid="uid://cp8dg7du15ud1" path="res://common/state/dragging_state.gd" id="6_nucm0"]
 [ext_resource type="Script" uid="uid://da7kncubpcegy" path="res://common/state/walking_state.gd" id="6_xlb73"]
 [ext_resource type="Script" uid="uid://cp4ki06t1ts02" path="res://common/state/working_state.gd" id="7_levrt"]
-[ext_resource type="Script" path="res://common/state/returning_to_base_state.gd" id="8_3hye3"]
+[ext_resource type="Script" uid="uid://csbraqbxg3mrf" path="res://common/state/returning_to_base_state.gd" id="8_3hye3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rylna"]
 radius = 12.0
 height = 44.0
 
 [node name="Villager" type="CharacterBody2D" unique_id=742301583]
+collision_layer = 2
+collision_mask = 13
 input_pickable = true
 script = ExtResource("1_rylna")
 
@@ -24,14 +26,19 @@ texture = ExtResource("2_4nyfk")
 shape = SubResource("CapsuleShape2D_rylna")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=376819715]
-debug_enabled = true
 
-[node name="Label" type="Label" parent="." unique_id=1470136845]
+[node name="NameLabel" type="Label" parent="." unique_id=1470136845]
 offset_left = -20.0
 offset_top = -52.0
 offset_right = 20.0
 offset_bottom = -29.0
 horizontal_alignment = 1
+
+[node name="StateLabel" type="Label" parent="." unique_id=1635976517]
+offset_left = -20.0
+offset_top = 28.0
+offset_right = 20.0
+offset_bottom = 51.0
 
 [node name="StateMachine" type="Node" parent="." unique_id=1604054219 node_paths=PackedStringArray("character", "initial_state")]
 script = ExtResource("3_4nyfk")

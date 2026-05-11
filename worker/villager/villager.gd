@@ -3,6 +3,8 @@ class_name Villager
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @export var task: Global.TaskType = Global.TaskType.NONE
+@export var resource_type: Global.ResourceType
+@export var harvested_amount: int = 0
 const speed: int = 100
 const villagerNames: Array = ["Joe", "Ben", "Jacob", "Martin", "David"]
 var villagerName: String
@@ -12,7 +14,8 @@ var is_dragging: bool = false
 
 func _ready() -> void:
 	villagerName = villagerNames.pick_random()
-	$Label.text = villagerName
+	$NameLabel.text = villagerName
+	Global.num_villagers += 1
 
 
 func _input(event: InputEvent) -> void:
@@ -25,12 +28,12 @@ func _input(event: InputEvent) -> void:
 			var closest_point: Vector2 = NavigationServer2D.map_get_closest_point(map, global_position)
 			
 			if global_position.distance_to(closest_point) > 1.0:
-				print("Dropped outside navigation region. Snapping to closest point.")
+				Log.info("Dropped outside navigation region. Snapping to closest point.")
 				global_position = closest_point
 			
 			_check_for_resource_spot()
 			
-			print("Dropped ", villagerName)
+			Log.debug("Dropped ", villagerName)
 
 
 func _check_for_resource_spot() -> void:
@@ -55,7 +58,7 @@ func _check_for_resource_spot() -> void:
 				Global.ResourceType.STONE:
 					task = Global.TaskType.GATHER_STONE
 			
-			print("Villager ", villagerName, " assigned task: ", Global.TaskType.keys()[task], " at ", target_spot.name)
+			Log.info("Villager ", villagerName, " assigned task: ", Global.TaskType.keys()[task], " at ", target_spot.name)
 			return
 
 
@@ -69,7 +72,7 @@ func set_target_as_current_mouse_position() -> void:
 
 
 func set_target(target_position: Vector2) -> void:
-	print("Target: ", target_position)
+	Log.debug("Target: ", target_position)
 	navigation_agent.target_position = target_position
 
 
@@ -92,7 +95,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			is_dragging = true
-			print("Selected character and started dragging!")
+			Log.debug("Selected character and started dragging!")
 			# Optional: Reset navigation when picking up
 			velocity = Vector2.ZERO
 			clear_target()
@@ -103,3 +106,6 @@ func clear_target() -> void:
 	navigation_agent.target_position = global_position
 	target_spot = null
 	task = Global.TaskType.NONE
+
+func set_status_label(status: String) -> void:
+	$StateLabel.text = status

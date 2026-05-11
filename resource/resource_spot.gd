@@ -12,11 +12,15 @@ func _ready() -> void:
 	resetLabel()
 
 func start_harvest():
-	print("Starting harvest")
+	Log.debug("Starting harvest")
 	$HarvestTimer.start(harvest_time)
 
-func _on_timer_timeout():
-#	TODO: Have to somehow change villager state after harvest is complete
+func _on_timer_timeout() -> void:
+	if (current_amount < harvest_amount):
+		Log.info("Not enough resources")
+		resource_harvested.emit(resource_type, 0)
+		return
+		
 	current_amount -= harvest_amount
 	resetLabel()
 	resource_harvested.emit(resource_type, harvest_amount)

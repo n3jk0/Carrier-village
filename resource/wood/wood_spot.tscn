@@ -6,6 +6,7 @@
 
 [node name="WoodSpot" unique_id=1218335561 instance=ExtResource("2_1ft4l")]
 script = ExtResource("1_3frv1")
+resource_type = 2
 
 [node name="TreeSprite" type="Sprite2D" parent="." index="3" unique_id=551982488]
 position = Vector2(20, 20)

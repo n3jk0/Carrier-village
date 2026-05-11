@@ -12,5 +12,4 @@ func _ready() -> void:
 
 func _on_resource_harvested(type: Global.ResourceType, amount: int) -> void:
 	var type_name = Global.ResourceType.keys()[type]
-	print(type_name, " hervested: ", amount)
-	print("Current amount: ", current_amount)
+	Log.info(type_name, " hervested: ", amount)

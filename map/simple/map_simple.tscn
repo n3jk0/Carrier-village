@@ -1364,53 +1364,59 @@ navigation_polygon = SubResource("NavigationPolygon_cfk7f")
 position = Vector2(147, 769)
 current_amount = 150
 harvest_amount = 10
-resource_type = 1
+resource_type = 2
 
 [node name="WoodSpot2" parent="WoodSpots" unique_id=1845184354 instance=ExtResource("2_3oteh")]
 position = Vector2(218, 769)
-resource_type = 1
+resource_type = 2
 
 [node name="WoodSpot3" parent="WoodSpots" unique_id=1099231924 instance=ExtResource("2_3oteh")]
 position = Vector2(217, 877)
-resource_type = 1
+resource_type = 2
 
 [node name="WoodSpot4" parent="WoodSpots" unique_id=1447842146 instance=ExtResource("2_3oteh")]
 position = Vector2(764, 91)
-resource_type = 1
+resource_type = 2
 
 [node name="WoodSpot5" parent="WoodSpots" unique_id=66876929 instance=ExtResource("2_3oteh")]
 position = Vector2(816, 611)
-resource_type = 1
+resource_type = 2
 
 [node name="WoodSpot6" parent="WoodSpots" unique_id=1726546069 instance=ExtResource("2_3oteh")]
 position = Vector2(1706, 1303)
-resource_type = 1
+resource_type = 2
 
 [node name="WoodSpot7" parent="WoodSpots" unique_id=1674084604 instance=ExtResource("2_3oteh")]
 position = Vector2(2056, 845)
-resource_type = 1
+resource_type = 2
 
 [node name="FoodSpots" type="Node" parent="." unique_id=812787856]
 
 [node name="FoodSpot" parent="FoodSpots" unique_id=1218335561 instance=ExtResource("3_ubk3n")]
 position = Vector2(270, 13)
 current_amount = 120
+resource_type = 1
 
 [node name="FoodSpot2" parent="FoodSpots" unique_id=934365960 instance=ExtResource("3_ubk3n")]
 position = Vector2(607, 13)
 current_amount = 120
+resource_type = 1
 
 [node name="FoodSpot3" parent="FoodSpots" unique_id=51045404 instance=ExtResource("3_ubk3n")]
 position = Vector2(995, 359)
+resource_type = 1
 
 [node name="FoodSpot4" parent="FoodSpots" unique_id=1385026582 instance=ExtResource("3_ubk3n")]
 position = Vector2(1520, 1243)
+resource_type = 1
 
 [node name="FoodSpot5" parent="FoodSpots" unique_id=747330187 instance=ExtResource("3_ubk3n")]
 position = Vector2(1520, 1243)
+resource_type = 1
 
 [node name="FoodSpot6" parent="FoodSpots" unique_id=602441357 instance=ExtResource("3_ubk3n")]
 position = Vector2(1571, 261)
+resource_type = 1
 
 [node name="Base" parent="." unique_id=753709565 instance=ExtResource("4_7blvk")]
 position = Vector2(427, 453)
