@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dvvvr00yoxdfb" path="res://map/tileset/mapPack_tilesheet.png" id="1_cfk7f"]
 [ext_resource type="PackedScene" uid="uid://utybaqfvwtw0" path="res://resource/wood/wood_spot.tscn" id="2_3oteh"]
 [ext_resource type="PackedScene" uid="uid://byimot06ct8g5" path="res://resource/food/food_spot.tscn" id="3_ubk3n"]
+[ext_resource type="PackedScene" uid="uid://doq7h1x331ws5" path="res://resource/stone/stone_spot.tscn" id="4_1eop6"]
 [ext_resource type="PackedScene" uid="uid://lofdcmgwb8ag" path="res://building/base/base.tscn" id="4_7blvk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3oteh"]
@@ -1352,7 +1353,7 @@ tile_map_data = PackedByteArray("AAAbAAIAAAAMAAMAAAAbAAEAAAANAAAAAAAbAAAAAAALAAA
 tile_set = SubResource("TileSet_q3smu")
 
 [node name="ObjectLayer" type="TileMapLayer" parent="." unique_id=1683038977]
-tile_map_data = PackedByteArray("AAAIAAUAAAADAAMAAAAJAAYAAAADAAMAAAAGAAMAAAAEAAMAAAALAA8AAAAEAAMAAAAXAAMAAAAIAAMAAAAXAAQAAAAIAAMAAAAZAAEAAAAIAAIAAAAaAAEAAAAIAAIAAAAbAAEAAAAIAAIAAAAZAAAAAAAIAAIAAAAaAAAAAAAIAAIAAAAQAAoAAAAIAAIAAAARAAoAAAAIAAIAAAACAA0AAAAOAAcAAAARAAgAAAAOAAcAAAAOAAcAAAAOAAcAAAAKAAEAAAAEAAIAAAANAAIAAAAEAAIAAAAOAAAAAAAEAAIAAAA=")
+tile_map_data = PackedByteArray("AAAIAAUAAAADAAMAAAAJAAYAAAADAAMAAAAGAAMAAAAEAAMAAAALAA8AAAAEAAMAAAAXAAMAAAAIAAMAAAAXAAQAAAAIAAMAAAACAA0AAAAOAAcAAAARAAgAAAAOAAcAAAAOAAcAAAAOAAcAAAAKAAEAAAAEAAIAAAANAAIAAAAEAAIAAAAOAAAAAAAEAAIAAAA=")
 tile_set = SubResource("TileSet_7blvk")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1248978198]
@@ -1362,33 +1363,24 @@ navigation_polygon = SubResource("NavigationPolygon_cfk7f")
 
 [node name="WoodSpot" parent="WoodSpots" unique_id=2030838040 instance=ExtResource("2_3oteh")]
 position = Vector2(147, 769)
-current_amount = 150
-harvest_amount = 10
-resource_type = 2
 
 [node name="WoodSpot2" parent="WoodSpots" unique_id=1845184354 instance=ExtResource("2_3oteh")]
 position = Vector2(218, 769)
-resource_type = 2
 
 [node name="WoodSpot3" parent="WoodSpots" unique_id=1099231924 instance=ExtResource("2_3oteh")]
 position = Vector2(217, 877)
-resource_type = 2
 
 [node name="WoodSpot4" parent="WoodSpots" unique_id=1447842146 instance=ExtResource("2_3oteh")]
 position = Vector2(764, 91)
-resource_type = 2
 
 [node name="WoodSpot5" parent="WoodSpots" unique_id=66876929 instance=ExtResource("2_3oteh")]
 position = Vector2(816, 611)
-resource_type = 2
 
 [node name="WoodSpot6" parent="WoodSpots" unique_id=1726546069 instance=ExtResource("2_3oteh")]
 position = Vector2(1706, 1303)
-resource_type = 2
 
 [node name="WoodSpot7" parent="WoodSpots" unique_id=1674084604 instance=ExtResource("2_3oteh")]
 position = Vector2(2056, 845)
-resource_type = 2
 
 [node name="FoodSpots" type="Node" parent="." unique_id=812787856]
 
@@ -1418,8 +1410,34 @@ resource_type = 1
 position = Vector2(1571, 261)
 resource_type = 1
 
+[node name="StoneSpots" type="Node" parent="." unique_id=1943121535]
+
+[node name="StoneSpot" parent="StoneSpots" unique_id=1521141809 instance=ExtResource("4_1eop6")]
+position = Vector2(1584, 37)
+
+[node name="StoneSpot2" parent="StoneSpots" unique_id=199917621 instance=ExtResource("4_1eop6")]
+position = Vector2(1635, 106)
+
+[node name="StoneSpot3" parent="StoneSpots" unique_id=516292608 instance=ExtResource("4_1eop6")]
+position = Vector2(1680, 36)
+current_amount = 150
+
+[node name="StoneSpot4" parent="StoneSpots" unique_id=1639592361 instance=ExtResource("4_1eop6")]
+position = Vector2(1710, 1054)
+current_amount = 150
+
+[node name="StoneSpot5" parent="StoneSpots" unique_id=1029707690 instance=ExtResource("4_1eop6")]
+position = Vector2(1843, 1060)
+
+[node name="StoneSpot6" parent="StoneSpots" unique_id=1941482477 instance=ExtResource("4_1eop6")]
+position = Vector2(1773, 1128)
+
 [node name="Base" parent="." unique_id=753709565 instance=ExtResource("4_7blvk")]
 position = Vector2(427, 453)
+
+[node name="StoneSpot" parent="." unique_id=466173983 instance=ExtResource("4_1eop6")]
+position = Vector2(1070, 641)
+current_amount = 200
 
 [connection signal="input_event" from="WoodSpots/WoodSpot" to="WoodSpots/WoodSpot" method="_on_input_event"]
 [connection signal="input_event" from="WoodSpots/WoodSpot2" to="WoodSpots/WoodSpot2" method="_on_input_event"]

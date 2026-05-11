@@ -65,7 +65,18 @@ func _check_for_resource_spot() -> void:
 func _process(_delta: float) -> void:
 	if is_dragging:
 		global_position = get_global_mouse_position()
-
+	
+#	TODO: Change this only when the resource type changes
+	match resource_type:
+		Global.ResourceType.FOOD:
+			$ResourceLabel.text = "🍎"
+		Global.ResourceType.WOOD:
+			$ResourceLabel.text = "🪵"
+		Global.ResourceType.STONE:
+			$ResourceLabel.text = "🪨"
+		Global.ResourceType.NONE:
+			$ResourceLabel.text = ""
+			
 
 func set_target_as_current_mouse_position() -> void:
 	set_target(get_global_mouse_position())

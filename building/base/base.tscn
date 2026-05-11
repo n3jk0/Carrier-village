@@ -143,16 +143,24 @@ position = Vector2(39.5, 24)
 shape = SubResource("RectangleShape2D_fnt2n")
 
 [node name="WoodLabel" type="Label" parent="." unique_id=1056600680]
-offset_left = 1.0
-offset_top = 48.0
-offset_right = 51.0
-offset_bottom = 71.0
+offset_top = 45.0
+offset_right = 50.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 30
 text = "Wood:"
 
+[node name="StoneLabel" type="Label" parent="." unique_id=1620914804]
+offset_top = 74.0
+offset_right = 99.0
+offset_bottom = 116.0
+theme_override_font_sizes/font_size = 30
+text = "Stone: "
+
 [node name="FoodLabel" type="Label" parent="." unique_id=827812843]
-offset_top = 69.0
-offset_right = 47.0
-offset_bottom = 92.0
+offset_top = 105.0
+offset_right = 88.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 30
 text = "Food: "
 
 [node name="FoodTimer" type="Timer" parent="." unique_id=37598488]

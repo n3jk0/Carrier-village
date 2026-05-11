@@ -65,4 +65,11 @@ metadata/_custom_type_script = "uid://cp4ki06t1ts02"
 script = ExtResource("8_3hye3")
 metadata/_custom_type_script = "uid://csbraqbxg3mrf"
 
+[node name="ResourceLabel" type="Label" parent="." unique_id=1603053658]
+offset_left = 8.0
+offset_top = -12.0
+offset_right = 48.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 20
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
