@@ -12,13 +12,17 @@ config_version=5
 
 config/name="Carrier Village"
 run/main_scene="uid://ci0v7ww68hbyr"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*uid://bb0rmc6224gm5"
 Log="*uid://8m4m5v1njdql"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/rider-plugin/plugin.cfg")
 
 [input]
 

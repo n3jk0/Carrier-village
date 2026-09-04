@@ -1439,6 +1439,8 @@ position = Vector2(427, 453)
 position = Vector2(1070, 641)
 current_amount = 200
 
+[node name="Buildings" type="Node" parent="." unique_id=552249259]
+
 [connection signal="input_event" from="WoodSpots/WoodSpot" to="WoodSpots/WoodSpot" method="_on_input_event"]
 [connection signal="input_event" from="WoodSpots/WoodSpot2" to="WoodSpots/WoodSpot2" method="_on_input_event"]
 [connection signal="input_event" from="WoodSpots/WoodSpot3" to="WoodSpots/WoodSpot3" method="_on_input_event"]
