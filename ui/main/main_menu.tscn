@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://b0a00y56skx2f"]
+
+[ext_resource type="Script" uid="uid://mvpoik7h4ed3" path="res://ui/main/main_menu.gd" id="1_ocgdw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ocgdw"]
+bg_color = Color(0.46229059, 0.46229064, 0.4622904, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svufk"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avjdu"]
+bg_color = Color(0.78775924, 0.78775924, 0.78775924, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjq2u"]
+bg_color = Color(0.78775924, 0.78775924, 0.78775924, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okkvt"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aapff"]
+bg_color = Color(0.78775924, 0.78775924, 0.78775924, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us4m4"]
+bg_color = Color(0.78775924, 0.78775924, 0.78775924, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vtu2"]
+bg_color = Color(0.78775924, 0.78775924, 0.78775924, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpjle"]
+bg_color = Color(0.78775924, 0.78775924, 0.78775924, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="MainMenu" type="Control" unique_id=1642912860]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ocgdw")
+
+[node name="Panel" type="Panel" parent="." unique_id=1738959712]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ocgdw")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=623771487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=812198707]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="GameName" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1162145278]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Carrier Village"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1811014927]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=2046964171]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_svufk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_avjdu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kjq2u")
+text = "Start game"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=867830246]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_okkvt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aapff")
+theme_override_styles/hover = SubResource("StyleBoxFlat_us4m4")
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=2118582192]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_svufk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vtu2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lpjle")
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]

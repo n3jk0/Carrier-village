@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Carrier Village"
-run/main_scene="uid://ci0v7ww68hbyr"
+run/main_scene="uid://b0a00y56skx2f"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
