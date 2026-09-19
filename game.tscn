@@ -3,9 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://d4giu7de1kntd" path="res://map/simple/map_simple.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://dk1d1usincj31" path="res://game.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://7nahqbmxnufu" path="res://worker/villager/villager.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://c70utxgo73ud7" path="res://ui/hud/hud.tscn" id="2_fc0e3"]
 
 [node name="Game" type="Node2D" unique_id=484213883]
 script = ExtResource("1_feb5d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1248119776]
+
+[node name="HUD" parent="CanvasLayer" unique_id=1850103421 instance=ExtResource("2_fc0e3")]
 
 [node name="MapSimple" parent="." unique_id=781160031 instance=ExtResource("1_80nbo")]
 
