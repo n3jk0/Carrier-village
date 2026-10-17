@@ -8,10 +8,6 @@
 [node name="Game" type="Node2D" unique_id=484213883]
 script = ExtResource("1_feb5d")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1248119776]
-
-[node name="HUD" parent="CanvasLayer" unique_id=1850103421 instance=ExtResource("2_fc0e3")]
-
 [node name="MapSimple" parent="." unique_id=781160031 instance=ExtResource("1_80nbo")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=794638313]
@@ -28,3 +24,7 @@ position = Vector2(154, 12)
 
 [node name="Villager2" parent="." unique_id=742301583 instance=ExtResource("2_e2o6t")]
 position = Vector2(457, 237)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1248119776]
+
+[node name="HUD" parent="CanvasLayer" unique_id=1850103421 instance=ExtResource("2_fc0e3")]

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c70utxgo73ud7"]
 
+[ext_resource type="Script" uid="uid://btqxxo11imot2" path="res://ui/hud/hud.gd" id="1_xmswo"]
+
 [node name="HUD" type="Control" unique_id=1850103421]
 layout_mode = 3
 anchors_preset = 15
@@ -7,16 +9,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_xmswo")
 
-[node name="Label" type="Label" parent="." unique_id=1747986117]
+[node name="Panel" type="Panel" parent="." unique_id=1019172298]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -23.0
+offset_bottom = 28.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Just a test label"
-horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=896437274]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 92.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1328796713]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="WoodLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=789645474]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🪵:"
+
+[node name="StoneLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=2138232335]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🪨:"
+
+[node name="FoodLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1799073905]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🍎:"

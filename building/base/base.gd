@@ -6,7 +6,7 @@ var wood_resources: int = 0
 var stone_resources: int = 0
 
 func _ready():
-	_reload_labels()
+	_reload_storage()
 
 func _on_resource_returned(type: Global.ResourceType, amount: int) -> void:
 	match type:
@@ -18,14 +18,15 @@ func _on_resource_returned(type: Global.ResourceType, amount: int) -> void:
 			stone_resources += amount
 	
 	Log.info("Resource returned: ", Global.ResourceType.keys()[type], " x", amount)
-	_reload_labels()
+	_reload_storage()
 	
-func _reload_labels() -> void:
-	$WoodLabel.text = "🪵: " + str(wood_resources)
-	$FoodLabel.text = "🍎: " + str(food_resources)
-	$StoneLabel.text = "🪨: " + str(stone_resources)
+func _reload_storage() -> void:
+	Global.wood_resources = wood_resources
+	Global.food_resources = food_resources
+	Global.stone_resources = stone_resources
+	Global.resources_changed.emit()
 
 
 func _on_food_timer_timeout() -> void:
 	food_resources -= Global.num_villagers
-	_reload_labels()
+	_reload_storage()
