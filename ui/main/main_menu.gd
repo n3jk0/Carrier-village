@@ -3,7 +3,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# Engine.time_scale is global and survives change_scene_to_file; the menu always runs at 1x.
+	Engine.time_scale = 1.0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

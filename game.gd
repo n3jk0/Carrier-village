@@ -30,7 +30,9 @@ func _handle_camera_movement(delta: float) -> void:
 	if direction == Vector2.ZERO:
 		return
 		
-	var target_pos: Vector2 = camera.position + direction * (camera_speed / camera.zoom.x) * delta
+	# delta is scaled by Engine.time_scale; undo it so panning speed ignores game speed.
+	var real_delta: float = delta / Engine.time_scale
+	var target_pos: Vector2 = camera.position + direction * (camera_speed / camera.zoom.x) * real_delta
 	camera.position = _clamp_camera_position(target_pos)
 
 

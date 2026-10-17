@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://btqxxo11imot2" path="res://ui/hud/hud.gd" id="1_xmswo"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_speed"]
+
 [node name="HUD" type="Control" unique_id=1850103421]
 layout_mode = 3
 anchors_preset = 15
@@ -46,3 +48,29 @@ text = "🪨:"
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "🍎:"
+
+[node name="SpeedBox" type="HBoxContainer" parent="VBoxContainer" unique_id=1642093517]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Speed1Button" type="Button" parent="VBoxContainer/SpeedBox" unique_id=1170524863]
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_speed")
+text = "1x"
+
+[node name="Speed2Button" type="Button" parent="VBoxContainer/SpeedBox" unique_id=1938274051]
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_speed")
+text = "2x"
+
+[node name="Speed3Button" type="Button" parent="VBoxContainer/SpeedBox" unique_id=402918765]
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_speed")
+text = "3x"
