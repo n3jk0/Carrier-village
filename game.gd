@@ -12,6 +12,10 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 
 
+func _ready() -> void:
+	Global.camera_focus_requested.connect(_on_camera_focus_requested)
+
+
 func _process(delta: float) -> void:
 	_handle_camera_movement(delta)
 
@@ -34,6 +38,10 @@ func _handle_camera_movement(delta: float) -> void:
 	var real_delta: float = delta / Engine.time_scale
 	var target_pos: Vector2 = camera.position + direction * (camera_speed / camera.zoom.x) * real_delta
 	camera.position = _clamp_camera_position(target_pos)
+
+
+func _on_camera_focus_requested(world_position: Vector2) -> void:
+	camera.position = _clamp_camera_position(world_position)
 
 
 ## Adjusts the camera zoom level and re-clamps position.

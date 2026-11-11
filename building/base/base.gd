@@ -6,6 +6,7 @@ var wood_resources: int = 0
 var stone_resources: int = 0
 
 func _ready():
+	Global.food_drain_interval = $FoodTimer.wait_time
 	_reload_storage()
 
 func _on_resource_returned(type: Global.ResourceType, amount: int) -> void:

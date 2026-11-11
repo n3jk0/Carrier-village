@@ -22,10 +22,10 @@ godot --headless --path . --import                          # re-import assets /
 ## Architecture
 
 **Autoloads** (`project.godot`):
-- `Global` (`common/global.gd`) — shared enums (`ResourceType`, `VillagerState`, `TaskType`), mirrored resource counters, `resources_changed` signal, `base_position`, `num_villagers` (incremented in `Villager._ready`).
+- `Global` (`common/global.gd`) — shared enums (`ResourceType`, `VillagerState`, `TaskType`), mirrored resource counters, `resources_changed` signal, `base_position`, `num_villagers` (incremented in `Villager._ready`, decremented in `_exit_tree`). Autoload state survives scene changes, so anything counted into `Global` must also be undone on exit.
 - `Log` (`common/logger/logger.gd`) — use `Log.debug/info/warn/error(...)` (variadic, args concatenated with no separator) instead of `print`. Default `minimum_level` is INFO, so `Log.debug` is silent unless lowered.
 
-**Scene flow**: `ui/main/main_menu.tscn` (main scene) → `change_scene_to_file("res://game.tscn")`. `game.tscn` holds the camera controller (`game.gd`, WASD/arrows + wheel zoom clamped to `Camera2D` limits), `map/simple/map_simple.tscn` (NavigationRegion2D, resource spots, Base), villager instances, and HUD under a CanvasLayer.
+**Scene flow**: `ui/main/main_menu.tscn` (main scene) → `change_scene_to_file("res://game.tscn")`; HUD "Menu" button / Esc goes back. `game.tscn` holds the camera controller (`game.gd`, WASD/arrows + wheel zoom clamped to `Camera2D` limits), `map/simple/map_simple.tscn` (NavigationRegion2D, resource spots, Base), villager instances, and HUD under a CanvasLayer.
 
 **Villager state machine** (`worker/villager/`, states in `common/state/`):
 - `StateMachine` node is a child of `Villager`; each `State` child registers itself keyed by `get_state_enum()` → `Global.VillagerState`. Transitions go through `state_machine.change_state(Global.VillagerState.X)`, never by node reference.
@@ -43,12 +43,19 @@ godot --headless --path . --import                          # re-import assets /
 
 **Game speed**: HUD buttons set `Engine.time_scale` (1x/2x/3x). It is global and survives scene changes, so `main_menu.gd` resets it; camera panning in `game.gd` divides delta by `time_scale` to stay real-time. Anything that should ignore game speed must do the same.
 
+**Pause**: HUD pause (Space) sets `get_tree().paused`, never `time_scale = 0` (would divide by zero in `game.gd`). `Game` root is `process_mode` Always so camera and HUD keep running; `MapSimple` and each villager instance in `game.tscn` are set to Pausable. Any new gameplay node added directly under `Game` must be set Pausable too, or it keeps running while paused. `main_menu.gd` resets `paused`.
+
 `demo/movable/` is a standalone prototype scene, not part of the game.
+
+## Design docs
+
+Game design lives in the Obsidian vault, `~/Documents/Obsidian Vault/Personal/GameDev/Carrier Village/`: `mini-game-plan.md` (phased roadmap, scope rules, backlog), `genre-mechanics-and-market-analysis.md` (direction: Virtual Villagers style, few villagers, individuals matter), `carrier-village-lost-expansion.md` (post-Phase-5 expansion, not to start yet). Scope rule from the roadmap: don't implement backlog ideas (enemies, second building type, weather, etc.) unless asked.
 
 ## Gotchas
 
 - `Global.base_position` is a hardcoded Vector2, not read from the Base node — moving Base in the map requires updating it.
 - Many signal connections live in `.tscn` files (`[connection ...]`), not code. Renaming a handler in `.gd` needs the scene updated too. Dangling connections fail silently (the smoke-run prints nothing) — e.g. `base.tscn` → `_on_body_entered` and `map_simple.tscn` spot `input_event` → `_on_input_event` currently have no handler.
+- `ResourceSpot` has one shared `HarvestTimer`: a second villager's `start_harvest()` restarts it, and every connected villager gets `resource_harvested` while `current_amount` drops once, so resources duplicate. Known bug, fix is a per-villager work timer.
 - Physics layers: 1 Terrain, 2 Player, 3 Resource_spot, 4 Building.
 - Scripts/resources are referenced by `uid://`; keep `.uid` files alongside `.gd` files when moving/renaming (prefer doing moves in the editor).
 - `addons/rider-plugin` is third-party (JetBrains Rider integration); don't edit. `.mcp.json` points at the Rider MCP server.

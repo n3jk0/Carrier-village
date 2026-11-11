@@ -16,6 +16,11 @@ func _ready() -> void:
 	villagerName = villagerNames.pick_random()
 	$NameLabel.text = villagerName
 	Global.num_villagers += 1
+	add_to_group("villagers")
+
+
+func _exit_tree() -> void:
+	Global.num_villagers -= 1
 
 
 func _input(event: InputEvent) -> void:

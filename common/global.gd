@@ -1,6 +1,7 @@
 extends Node
 
 signal resources_changed
+signal camera_focus_requested(world_position: Vector2)
 
 enum ResourceType { NONE, FOOD, WOOD, STONE }
 enum VillagerState { IDLE, DRAGGING, WALKING, WORKING, RETURNING_TO_BASE }
@@ -19,3 +20,5 @@ func get_state_enum_name(value: int) -> String:
 var food_resources: int = 50
 var wood_resources: int = 0
 var stone_resources: int = 0
+## Seconds between food drains; mirrored from Base's FoodTimer.
+var food_drain_interval: float = 15.0

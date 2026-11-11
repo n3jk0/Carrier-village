@@ -5,6 +5,8 @@ extends Control
 func _ready() -> void:
 	# Engine.time_scale is global and survives change_scene_to_file; the menu always runs at 1x.
 	Engine.time_scale = 1.0
+	# get_tree().paused also survives scene changes.
+	get_tree().paused = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
