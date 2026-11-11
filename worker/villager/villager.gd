@@ -107,14 +107,12 @@ func move(_delta: float) -> void:
 	move_and_slide()
 
 
-func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			is_dragging = true
-			Log.debug("Selected character and started dragging!")
-			# Optional: Reset navigation when picking up
-			velocity = Vector2.ZERO
-			clear_target()
+## Picks the villager up: it follows the mouse until the left button is released.
+func start_drag() -> void:
+	is_dragging = true
+	velocity = Vector2.ZERO
+	clear_target()
+	Log.debug("Selected ", villagerName, " and started dragging")
 
 
 ## Clears the current navigation target by setting it to the villager's position.

@@ -24,11 +24,16 @@ position_smoothing_enabled = true
 [node name="Villager" parent="." unique_id=1243158422 instance=ExtResource("2_e2o6t")]
 process_mode = 1
 position = Vector2(154, 12)
+input_pickable = true
 
 [node name="Villager2" parent="." unique_id=742301583 instance=ExtResource("2_e2o6t")]
 process_mode = 1
 position = Vector2(457, 237)
+input_pickable = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1248119776]
 
 [node name="HUD" parent="CanvasLayer" unique_id=1850103421 instance=ExtResource("2_fc0e3")]
+
+[connection signal="input_event" from="Villager" to="Villager" method="_on_input_event"]
+[connection signal="input_event" from="Villager2" to="Villager2" method="_on_input_event"]

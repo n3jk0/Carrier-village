@@ -8,6 +8,8 @@ extends Node2D
 @export var min_zoom: float = 0.5
 ## Maximum zoom level.
 @export var max_zoom: float = 2.0
+## Max screen distance in pixels between the cursor and a villager to pick it up.
+@export var pick_radius: float = 40.0
 
 @onready var camera: Camera2D = $Camera2D
 
@@ -26,6 +28,27 @@ func _unhandled_input(event: InputEvent) -> void:
 			_adjust_zoom(zoom_speed)
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			_adjust_zoom(-zoom_speed)
+		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			_try_pick_villager()
+
+
+## Starts dragging the villager closest to the cursor, if one is within pick_radius on screen.
+func _try_pick_villager() -> void:
+	# Villagers are Pausable: their drop (_input) and mouse follow (_process) don't run while paused.
+	if get_tree().paused:
+		return
+	var mouse: Vector2 = get_global_mouse_position()
+	var best_dist: float = pick_radius / camera.zoom.x
+	var nearest: Villager = null
+	for node: Node in get_tree().get_nodes_in_group("villagers"):
+		var villager: Villager = node as Villager
+		var dist: float = villager.global_position.distance_to(mouse)
+		if dist < best_dist:
+			best_dist = dist
+			nearest = villager
+	if nearest:
+		nearest.start_drag()
+		get_viewport().set_input_as_handled()
 
 
 ## Handles camera movement based on input actions and clamps edges to map limits.
